@@ -1,4 +1,4 @@
-#H1 Matlab script implementing the [@msdanalyzer class](https://github.com/tinevez/msdanalyzer) written by @tinevez
+# Matlab script implementing the [@msdanalyzer class](https://github.com/tinevez/msdanalyzer) written by @tinevez #
 
 Matlab script to generate Mean Squared Displacement curves of Tracks generated via the Fiji TrackMate plugin
 
@@ -19,7 +19,7 @@ Matlab script to generate Mean Squared Displacement curves of Tracks generated v
 	+ **Confined movement option:** The Confined movement option requires further input from the user which is requested via a pop up window. The user is requested to estimate the approximate percentage of the curve that is linear before saturation sets in. The estimated diffusion coefficient through linear fit of the mean MSD curve is given with a 95 % confidence interval. The calculated goodness of fit is also given. The fit is performed on the initial data points. 
   
   
-#H2 License
+# License #
 This code is licensed under the GNU General Public License Version 3.
 
 For more information contact m.held@liverpool.ac.uk.
