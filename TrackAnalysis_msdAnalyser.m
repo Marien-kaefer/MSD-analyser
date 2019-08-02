@@ -27,7 +27,7 @@ end
 ma = msdanalyzer(2, md.spaceUnits, md.timeUnits);
 ma = ma.addAll(tracks);
 disp(ma)
-% % Debug only - Plot trajectories
+% Debug only - Plot trajectories
 % figure('numbertitle', 'off', 'Name','Tracks')
 % [hps, ha] = ma.plotTracks;
 % ma.labelPlotTracks(ha);
@@ -43,7 +43,7 @@ h2 = figure('numbertitle', 'off', 'Name','Mean Squared Distance - gray area: all
 hmsd = ma.plotMeanMSD(gca, true);
 
 % Ask user at which temperature the experiment was run
-answer = inputdlg('At what temperature (°C) was the experiment run?', 'Sample', [1 50]);
+answer = inputdlg('At what temperature (°C) was the experiment run?', 'Temperature request', [1 50]);
 x = str2double(answer{1})/100;
 kT = 1.38064852 * 10^(-23) * (273.15 + x) ;
 clear x
@@ -93,6 +93,7 @@ elseif indx == 2
 fprintf("Transported motion analysis.\n'");   
 
 A = ma.getMeanMSD;
+A(any(isnan(A),2),:) = [];
 t = A(:, 1); % delay vector
 msd = A(:,2); % msd
 std_msd = A(:,3); % we will use inverse of the std as weights for the fit
